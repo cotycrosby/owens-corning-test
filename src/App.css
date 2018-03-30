@@ -8,3 +8,10 @@
 	padding: 10px;
 	margin: 10px;
 }
+
+.Swatch  img
+{
+	max-width: 75px;
+	height: auto;
+	clear: both;
+}

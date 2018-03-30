@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import $ from 'jquery';
-import Swatches from './components/swatches';
+// import Swatches from './components/swatches';
+import ShingleLines from './components/shingleLines';
+
 
 
 
@@ -13,7 +15,7 @@ class App extends Component {
     super();
 
     this.state = {
-      swatches: []
+      shingles: []
     }
 
   }
@@ -21,6 +23,7 @@ class App extends Component {
 
   getData()
   {
+    let formattedData = [];
 
     $.ajax({
       url: 'https://mdms.owenscorning.com/api/v1/product/shingles?zip=43659',
@@ -29,8 +32,18 @@ class App extends Component {
 
       success: function(d)
       {
-        this.setState({swatches: d}, function(){
-          // console.log(this.state.swatches);
+
+        // console.log(d);
+
+        d.forEach(el => {
+          formattedData[el.uid] = {
+            name: el.proper_name,
+            images: el.gallery_images
+          };
+        });
+
+        this.setState({shingles: formattedData}, function(){
+          // console.log(this.state.shingles);
         })
 
       }.bind(this),
@@ -57,14 +70,7 @@ class App extends Component {
     return (
       <div className="App">
       <div className='container'>
-        <div className='row'>
-          <div className='col-md-6'>
-            <h1>Hello World</h1>
-          </div>
-          <div className='col-md-6'>
-            <Swatches swatches={this.state.swatches} />
-          </div>
-        </div>
+        <ShingleLines lines={this.state.shingles} />
       </div>
         
       </div>

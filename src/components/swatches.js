@@ -12,11 +12,14 @@ class Swatches extends Component {
 
     if( this.props.swatches)
     {
+      
       swatchItems = this.props.swatches.map(swatch => {
+        
         return (
           <SwatchItem key={swatch.uid} swatch = {swatch} />
         );
-      })
+        
+      });
     }
 
     return (
