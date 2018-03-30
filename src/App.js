@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import $ from 'jquery';
+import Swatches from './components/swatches';
 
-// File thats needed for data
-// https://mdms.owenscorning.com/api/v1/product/shingles?zip=43659
 
 
 class App extends Component {
@@ -15,7 +13,7 @@ class App extends Component {
     super();
 
     this.state = {
-      data: {}
+      swatches: []
     }
 
   }
@@ -31,8 +29,8 @@ class App extends Component {
 
       success: function(d)
       {
-        this.setState({data: d}, function(){
-          console.log(this.state);
+        this.setState({swatches: d}, function(){
+          // console.log(this.state.swatches);
         })
 
       }.bind(this),
@@ -58,6 +56,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <div className='container'>
+        <div className='row'>
+          <div className='col-md-6'>
+            <h1>Hello World</h1>
+          </div>
+          <div className='col-md-6'>
+            <Swatches swatches={this.state.swatches} />
+          </div>
+        </div>
+      </div>
         
       </div>
     );
