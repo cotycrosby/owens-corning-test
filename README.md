@@ -16,5 +16,8 @@ I chose Jquery over the more modern methods of handling get requests, because I'
 > App
 >> Shingle Lines
 >>> Line 
->>>> Main Display   
->>>> Available Colors
+>>>> swatches
+
+I'm not sure if something like this warrants having different files for the components or if you can just render everything in App.js.
+
+

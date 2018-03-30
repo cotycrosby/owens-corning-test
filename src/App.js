@@ -4,12 +4,22 @@ import $ from 'jquery';
 // import Swatches from './components/swatches';
 import ShingleLines from './components/shingleLines';
 
+/*
+  Coty Crosby
+  Owens Corning Internship Project
+
+
+
+*/
+
 
 
 
 class App extends Component {
 
 
+
+  // set the shingle state so the get request has a place to be stored.
   constructor()
   {
     super();
@@ -33,18 +43,15 @@ class App extends Component {
       success: function(d)
       {
 
-        // console.log(d);
-
+        // format the data so that its easier for me to read the console.logs
         d.forEach(el => {
-          formattedData[el.uid] = {
+          formattedData.push( {
             name: el.proper_name,
             images: el.gallery_images
-          };
+          });
         });
 
-        this.setState({shingles: formattedData}, function(){
-          // console.log(this.state.shingles);
-        })
+        this.setState({shingles: formattedData});
 
       }.bind(this),
 
@@ -66,6 +73,8 @@ class App extends Component {
     this.getData();
   }
 
+
+  //wrap everything in the container for bootstrap
   render() {
     return (
       <div className="App">

@@ -1,33 +1,33 @@
 import React, { Component } from 'react';
-import SwatchItem from './swatchItem';
+// import SwatchItem from './swatchItem';
 
 
 
 class Swatches extends Component {
 
+  imageHandler(e)
+  {
 
+    let id = this.props.id;
+
+    
+
+
+    this.props.changeImage(id);
+      
+  }
 
   render() {
-    let swatchItems;
 
-    if( this.props.swatches)
-    {
-      
-      swatchItems = this.props.swatches.map(swatch => {
-        
-        return (
-          <SwatchItem key={swatch.uid} swatch = {swatch} />
-        );
-        
-      });
-    }
+    let className = (this.props.activeNumber === this.props.id) ? 'active' : '';
+
+    
 
     return (
-      <div className="Swatches">
-      <ul>
-        {swatchItems}
-      </ul>  
-      </div>
+      <li onClick={this.imageHandler.bind(this)}>
+        <img src={this.props.swatches.img_url} alt={this.props.swatches.name} className={className} data-id={this.props.id } />
+        <p className={className}>{this.props.swatches.name} </p>
+      </li>
         
     );
   }

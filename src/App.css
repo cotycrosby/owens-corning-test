@@ -1,17 +1,34 @@
-.Swatches ul {
-  list-style: none;
-}
 
-.Swatch {
+.swatches ul {
 	display: inline-block;
-	border: 1px solid #232323;
-	padding: 10px;
+}
+.swatches ul li {
+	display: inline-block;
 	margin: 10px;
 }
 
-.Swatch  img
+.swatches ul li img.active {
+	border-color: #aaa;
+	/*max-width: 80px;*/
+
+}
+
+
+.swatches ul li img
 {
 	max-width: 75px;
 	height: auto;
 	clear: both;
+	border-top: 3px solid white;
 }
+
+.swatches ul li p.active {
+	/*font-weight: bold;*/ /*messed with the scaling so I had to scrap this.*/
+}
+
+.main img {
+	max-width: 100%;
+	height: auto;
+}
+
+
