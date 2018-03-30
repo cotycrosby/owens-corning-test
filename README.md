@@ -16,5 +16,5 @@ I chose Jquery over the more modern methods of handling get requests, because I'
 > App
 >> Shingle Lines
 >>> Line 
->>>> Main Display
+>>>> Main Display   
 >>>> Available Colors
