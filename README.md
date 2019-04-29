@@ -21,3 +21,9 @@ I chose Jquery over the more modern methods of handling get requests, because I'
 I'm not sure if something like this warrants having different files for the components or if you can just render everything in App.js.
 
 
+I just opened this up in a different computer and it still works. The page boots slowly
+* Git clone this repo
+* `npm install`
+* `npm start`
+
+
